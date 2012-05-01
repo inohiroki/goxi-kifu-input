@@ -47,12 +47,11 @@ var $goban = $("<APPLET/>").attr({
 	name:"LeafShow",
 	id: "KifuInputLeafShow" // 一意になりそうなIDを適当に付ける
 });
-$goban.append("\
-		<param name='advancemoves' value='true'>\
-		<param name='layout' value='./Kanki/goxi.xml'>\
-		<param name='leafhint' VALUE='true'> \
-		<PARAM NAME='startmese' VALUE='goxi!'> \
-		<param name='moves' value=''>"
+$goban.append("<param name='advancemoves' value='true'>" +
+		"<param name='layout' value='./Kanki/goxi.xml'>" +
+		"<param name='leafhint' VALUE='true'>" +
+		"<PARAM NAME='startmese' VALUE='goxi!'>" +
+		"<param name='moves' value=''>"
 );
 
 /*
@@ -82,6 +81,9 @@ var $kifureadtext = $("<textarea/>").attr({
 	rows: "3",
 	id: "kifutext",
 	value: "ここに棋譜を貼りつけて下さい"
+}).css({
+	width: "50%",
+	verticalAlign: "middle"
 }).before("<label/>").attr("for", "kifutext").text("＜棋譜データを入力＞");
 
 $kifureadtext.bind("input", function(){
