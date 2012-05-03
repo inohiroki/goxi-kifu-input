@@ -1,10 +1,10 @@
-//==UserScript==
-//@name           goxi-kifu-input
-//@namespace      http://ino.xrea.jp/
-//@description    goxiへ棋譜入力機能を追加する
-//@include        http://goxi.jp/diary/*
-//@require        http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
-//==/UserScript==
+// ==UserScript==
+// @name           goxi-kifu-input
+// @namespace      http://ino.xrea.jp/
+// @description    goxiへ棋譜入力機能を追加する
+// @include        http://goxi.jp/diary/*
+// @require        http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
+// ==/UserScript==
 
 /*
  * 碁盤ボタンの追加
