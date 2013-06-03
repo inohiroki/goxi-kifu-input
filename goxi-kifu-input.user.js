@@ -67,7 +67,7 @@ $kifureadfile.change(function() {
 	reader.readAsText(file);
 	reader.onload = function(evt){
 		var str = evt.target.result;
-		var ishiba = unsafeWindow.document.getElementById("KifuInputLeafShow").wrappedJSObject;
+		var ishiba = unsafeWindow.document.getElementById("KifuInputLeafShow");
 		ishiba.ta1.setText(SGF2isiba(FF4conv(str)));
 		ishiba.ExeCmd("LEAF_READ");
 		ishiba.ExeCmd("LEAF_GO_LAST");
@@ -88,7 +88,7 @@ var $kifureadtext = $("<textarea/>").attr({
 
 $kifureadtext.bind("input", function(){
 	var str = document.getElementById("kifutext").value;
-	var ishiba = unsafeWindow.document.getElementById("KifuInputLeafShow").wrappedJSObject;
+	var ishiba = unsafeWindow.document.getElementById("KifuInputLeafShow");
 	ishiba.ta1.setText(SGF2isiba(FF4conv(str)));
 	ishiba.ExeCmd("LEAF_READ");
 	ishiba.ExeCmd("LEAF_GO_LAST");
@@ -104,7 +104,7 @@ var $kifucopy = $("<button/>").attr({
 	type: "button"
 }).text("棋譜コピー");
 $kifucopy.bind("click", function(){
-	var str = unsafeWindow.document.getElementById("KifuInputLeafShow").wrappedJSObject.GetSendKifuStr();
+	var str = unsafeWindow.document.getElementById("KifuInputLeafShow").GetSendKifuStr();
 	str = "\n_KIFU_START_\n" + str + "\n_KIFU_END_\n";
 	$("#diary_body").insertAtCaret(str);
 
@@ -115,8 +115,8 @@ $kifucopy.bind("click", function(){
  */
 var $branch = $("<button/>").attr("type", "button").text("棋譜コピー(変化図付き)");
 $branch.bind("click", function(){
-	unsafeWindow.document.getElementById("KifuInputLeafShow").wrappedJSObject.ExeCmd("SGF_ALLDATA");
-	var str = unsafeWindow.document.getElementById("KifuInputLeafShow").wrappedJSObject.ta1.getText();
+	unsafeWindow.document.getElementById("KifuInputLeafShow").ExeCmd("SGF_ALLDATA");
+	var str = unsafeWindow.document.getElementById("KifuInputLeafShow").ta1.getText();
 	str = str.replace(/ID\[[0-9]*\]/g,'');
 	str = str.replace(/\r/g,'');
 	str = str.replace(/\n/g,'');
